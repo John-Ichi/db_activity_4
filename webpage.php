@@ -20,7 +20,7 @@ include 'connect.php';
 
 <div>
     <button>
-        <a href="insert.php"> Add a user>
+        <a href="insert.php"> Add a user
     </button>
 </div>
 <br>
@@ -51,7 +51,7 @@ if ($result) {
         $id = $row['id'];
         $name = $row['name'];
         $email = $row['email'];
-        $bithday = $row['birthday'];
+        $birthday = $row['birthday'];
         $address = $row['address'];
         $gender = $row['gender'];
 

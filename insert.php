@@ -2,7 +2,31 @@
 include 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-    //Code
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $birthday = $_POST['birthday'];
+    $address = $_POST['address'];
+    $gender = $_POST['gender'];
+
+    $sql = "INSERT INTO `cervantes_dizon_mananquil` (`name`, `email`, `birthday`, `address`, `gender`) VALUES (?, ?, ?, ?, ?)";
+
+    $insertStatement = $conn->prepare($sql);
+    $insertStatement->bindParam(1, $name);
+    $insertStatement->bindParam(2, $email);
+    $insertStatement->bindParam(3, $birthday);
+    $insertStatement->bindParam(4, $address);
+    $insertStatement->bindParam(5, $gender);
+
+    $result = $insertStatement->execute();
+
+    if ($result) {
+        header('Location: webpage.php');
+        exit();
+    }
+    else {
+        echo "<script> alert(Error); </script>";
+        header('Location: webpage.php');
+    }
 }
 ?>
 
@@ -15,15 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 </head>
 <body>
     <form method="post">
-        <input type="text" placeholder="Name"><br>
-        <input type="text" placeholder="Email"><br>
+        <input type="text" placeholder="Name" name="name"><br>
+        <input type="text" placeholder="Email" name="email"><br>
         Birthday <br>
-        <input type="date"><br>
-        <input type="text" placeholder="Address"><br>
+        <input type="date" name="birthday"><br>
+        <input type="text" placeholder="Address" name="address"><br>
         Gender: <br>
-        <input type="radio" name="GENDER" value="Male">Male <br>
-        <input type="radio" name="GENDER" value="Female">Female <br>
-        <input type="radio" name="GENDER" value="Other">Other <br>
+        <input type="radio" name="gender" value="Male">Male <br>
+        <input type="radio" name="gender" value="Female">Female <br>
+        <input type="radio" name="gender" value="Other">Other <br>
         <button type="submit" name="submit">Submit</button><br>
         <button type="reset">Reset</button><br>
         <a href="webpage.php">Return</a>
