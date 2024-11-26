@@ -34,6 +34,7 @@ include 'connect.php';
         <th>BIRTHDAY</th>
         <th>ADDRESS</th>
         <th>GENDER</th>
+        <th>EDIT</th>
     </tr>
 </thead>
 
