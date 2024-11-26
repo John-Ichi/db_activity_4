@@ -8,7 +8,7 @@ include 'connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LAB ACTIVITY 4</title>
+    <title>Lab Activity 4</title>
 
     <style>
     </style>
@@ -20,7 +20,7 @@ include 'connect.php';
 
 <div>
     <button>
-        <a href="insert.php"> Add a user
+        <a href="insert.php"> Add a user </a>
     </button>
 </div>
 <br>
