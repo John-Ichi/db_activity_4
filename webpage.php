@@ -19,9 +19,9 @@ include 'connect.php';
 <h1>USER INFORMATION</h1>
 
 <div>
-    <button>
-        <a href="insert.php"> Add a user </a>
-    </button>
+    <a href="insert.php">
+        <button>ADD USER</button>
+    </a>
 </div>
 <br>
 
@@ -64,12 +64,11 @@ if ($result) {
         <td>' . $address . '</td>
         <td>' . $gender . '</td>
         <td>
-         <button>
-            <a href="update.php?updatebyid=' . $id . '"> Edit </a>
-         </button>
-         
-         </td>
-         </tr>';
+            <a href="update.php?updatebyid=' . $id . '">
+                <button>EDIT</button>
+            </a>
+        </td>
+        </tr>';
 
     }
 }
