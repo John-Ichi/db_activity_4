@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,6 @@ include 'connection.php';
     <title>LAB ACTIVITY 4</title>
 
     <style>
-
     </style>
 
 </head>
@@ -31,9 +30,9 @@ include 'connection.php';
     <tr>
         <th>ID</th>
         <th>NAME</th>
-        <th>AGE</th>
         <th>EMAIL</th>
-        <th>BIRTHDATE</th>
+        <th>BIRTHDAY</th>
+        <th>ADDRESS</th>
         <th>GENDER</th>
     </tr>
 </thead>
@@ -41,8 +40,8 @@ include 'connection.php';
 <tbody>
 
 <?php
-$sql = "SELECT id, name, age, email, birthdate, gender FROM cervantes_dizon_mananquil table";
-$statement = $con->prepare($sql);
+$sql = "SELECT id, name, email, birthday, address, gender FROM cervantes_dizon_mananquil";
+$statement = $conn->prepare($sql);
 $statement->execute();
 
 $result = $statement->fetchALL(PDO::FETCH_ASSOC);
@@ -51,17 +50,17 @@ if ($result) {
     foreach ($result as $row) {
         $id = $row['id'];
         $name = $row['name'];
-        $age = $row['age'];
         $email = $row['email'];
-        $bithdate = $row['birthdate'];
+        $bithday = $row['birthday'];
+        $address = $row['address'];
         $gender = $row['gender'];
 
         echo '<tr>
         <td>' . $id . '</td>
         <td>' . $name . '</td>
-        <td>' . $age . '</td>
         <td>' . $email . '</td>
-        <td>' . $birthdate . '</td>
+        <td>' . $birthday . '</td>
+        <td>' . $address . '</td>
         <td>' . $gender . '</td>
         <td>
          <button>
