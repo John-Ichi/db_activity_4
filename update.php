@@ -26,7 +26,7 @@ if (isset($_POST['updateButton'])) {
     $gender = $_POST['gender'];
     
 
-    $sql_update = "UPDATE `demotable` SET `name` = '$name', `email` = '$email', `birthday` = '$birthday', `address` = '$address', `gender` = '$gender' WHERE `id` = '$userid'";
+    $sql_update = "UPDATE `cervantes_dizon_mananquil` SET `name` = '$name', `email` = '$email', `birthday` = '$birthday', `address` = '$address', `gender` = '$gender' WHERE `id` = '$userid'";
 
     $update_statement = $conn->prepare($sql_update);
     $update_result = $update_statement->execute();
@@ -67,11 +67,11 @@ if (isset($_POST['updateButton'])) {
             <input type="text" name="address" placeholder="Enter your address" autocomplete="off" value="<?php echo $original_address ?>" required>
             <br>
             <label> Gender: </label>
-            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>Male
+            <input type="radio" name="gender" <?php echo ($original_gender =="Male") ? "checked" : "";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>Male
             <br>
-            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>Female
+            <input type="radio" name="gender" <?php echo ($original_gender =="Female") ? "checked" : "";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>Female
             <br>
-            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>Other
+            <input type="radio" name="gender" <?php echo ($original_gender =="Other") ? "checked" : "";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>Other
             <br>
             <button type="submit" name="updateButton"> Update </button>
             <br>
