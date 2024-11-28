@@ -83,8 +83,10 @@ if (isset($_POST['updateButton'])) {
 </head>
 
 <body>
+    <div class="container-sm">
     <h1>UPDATE USER INFO</h1>
-    <div>
+    </div>
+    <div class="container">
         <form action="" method="POST">
             <label> Name: </label>
             <input type="text" name="name" placeholder="Enter full name" autocomplete="off" value="<?php echo $original_name ?>" required>
@@ -105,11 +107,20 @@ if (isset($_POST['updateButton'])) {
             <br>
             <input type="radio" name="gender" <?php echo ($original_gender =="Other") ? "checked" : "";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>Other
             <br>
+            <div class="container text-center pb-3">
+            
+            <div class="row">
+            <div class="col">
             <button type="submit" name="updateButton"> Update </button>
             <br>
-            <button>
+            </div>
+
+            <div class="col">
+            <button class="btn btn-sm btn-light">
                 <a href="webpage.php"> Cancel</a>
             </button>
+            </div>
+            </div>
 
         </form>
     </div>
