@@ -58,7 +58,7 @@ if (isset($_POST['updateButton'])) {
         }
         .container {
             background-color: #272d2d;
-            border-radius: 5px;
+            border-radius: 10px;
             margin-top: 15px;
             max-width: 400px;
             text-align: left;
@@ -67,9 +67,12 @@ if (isset($_POST['updateButton'])) {
             align-items: center;
             margin-left: auto;
             margin-right: auto;
+            padding: 20px;
         }
-        .row {
+        .buttons {
             display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .btn {
             color: gray;
@@ -86,7 +89,6 @@ if (isset($_POST['updateButton'])) {
             color: white;
             text-shadow: 2px 2px 4px #000000;
         }
-    </style>
     </style>
 </head>
 
