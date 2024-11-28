@@ -3,8 +3,8 @@ include 'connect.php';
 
 $userid = $_GET['updatebyid'];
 
-$sql = "SELECT name, email, birthday, address, gender FROM demotable WHERE id = $userid";
-$statement = $con->prepare($sql);
+$sql = "SELECT name, email, birthday, address, gender FROM cervantes_dizon_mananquil WHERE id = $userid";
+$statement = $conn->prepare($sql);
 $statement->execute();
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -26,9 +26,9 @@ if (isset($_POST['updateButton'])) {
     $gender = $_POST['gender'];
     
 
-    $sql_update = "UPDATE `demotable` SET `name` = '$name', `email` = '$email', `birthday` = '$birthday', `address` = '$address', `gender` = '$gender', WHERE `id` = '$userid'";
+    $sql_update = "UPDATE `demotable` SET `name` = '$name', `email` = '$email', `birthday` = '$birthday', `address` = '$address', `gender` = '$gender' WHERE `id` = '$userid'";
 
-    $update_statement = $con->prepare($sql_update);
+    $update_statement = $conn->prepare($sql_update);
     $update_result = $update_statement->execute();
 
 
@@ -67,14 +67,11 @@ if (isset($_POST['updateButton'])) {
             <input type="text" name="address" placeholder="Enter your address" autocomplete="off" value="<?php echo $original_address ?>" required>
             <br>
             <label> Gender: </label>
-            <input type="radio" name="gender" value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>
-            Male
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>Male
             <br>
-            <input type="radio" name="gender" value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>
-            Female
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>Female
             <br>
-            <input type="radio" name="gender" value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>
-            Other
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>Other
             <br>
             <button type="submit" name="updateButton"> Update </button>
             <br>
