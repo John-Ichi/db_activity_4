@@ -54,14 +54,21 @@ if (isset($_POST['updateButton'])) {
             text-align: center;
             font-family: "Arimo", serif;
             background-image: linear-gradient(to bottom right, #23cd6b, #272d2d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .container {
             background-color: #272d2d;
             border-radius: 5px;
-            margin-top: 15px;
+            padding: 20px;
             max-width: 400px;
+            width: 100%;
             text-align: left;
             color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
         .btn {
             color: gray;
