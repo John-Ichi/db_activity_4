@@ -69,7 +69,7 @@ if (isset($_POST['updateButton'])) {
             margin-right: auto;
             padding: 20px;
         }
-        .buttons {
+        .rows {
             display: flex;
             justify-content: center;
             gap: 20px;
