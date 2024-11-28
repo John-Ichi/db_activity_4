@@ -68,6 +68,9 @@ if (isset($_POST['updateButton'])) {
             margin-left: auto;
             margin-right: auto;
         }
+        .row {
+            display: flex;
+        }
         .btn {
             color: gray;
         }
