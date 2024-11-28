@@ -112,6 +112,7 @@ if (isset($_POST['updateButton'])) {
             <input type="text" name="address" placeholder="Enter your address" autocomplete="off" value="<?php echo $original_address ?>" required>
             <br>
             <label> Gender: </label>
+            <br>
             <input type="radio" name="gender" <?php echo ($original_gender =="Male") ? "checked" : "";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>Male
             <br>
             <input type="radio" name="gender" <?php echo ($original_gender =="Female") ? "checked" : "";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>Female
