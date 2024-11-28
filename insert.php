@@ -39,18 +39,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 </head>
 <body>
     <form method="post">
-        <input type="text" placeholder="Name" name="name"><br>
-        <input type="text" placeholder="Email" name="email"><br>
+        <input type="text" placeholder="Name" name="name" required><br>
+        <input type="text" placeholder="Email" name="email" required><br>
         Birthday <br>
-        <input type="date" name="birthday"><br>
-        <input type="text" placeholder="Address" name="address"><br>
+        <input type="date" name="birthday" required><br>
+        <input type="text" placeholder="Address" name="address" required><br>
         Gender: <br>
-        <input type="radio" name="gender" value="Male">Male <br>
-        <input type="radio" name="gender" value="Female">Female <br>
-        <input type="radio" name="gender" value="Other">Other <br>
-        <button type="submit" name="submit">Submit</button><br>
-        <button type="reset">Reset</button><br>
-        <a href="webpage.php">Return</a>
+        <input type="radio" name="gender" value="Male" required>Male <br>
+        <input type="radio" name="gender" value="Female" required>Female <br>
+        <input type="radio" name="gender" value="Other" required>Other <br>
+        <button type="submit" name="submit">SUBMIT</button><br>
+        <button type="reset">RESET</button><br>
+        <button>
+            <a href="webpage.php">RETURN</a>
+        </button>
     </form>
 </body>
 </html>
