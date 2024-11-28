@@ -48,6 +48,38 @@ if (isset($_POST['updateButton'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Record</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: "Arimo", serif;
+            background-image: linear-gradient(to bottom right, #23cd6b, #272d2d);
+        }
+        .container {
+            background-color: #272d2d;
+            border-radius: 5px;
+            margin-top: 15px;
+            max-width: 400px;
+            text-align: left;
+            color: white;
+        }
+        .btn {
+            color: gray;
+        }
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+        input {
+            margin: 10px;
+        }
+        h1 {
+            margin-top: 10px;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+    </style>
+    </style>
 </head>
 
 <body>
