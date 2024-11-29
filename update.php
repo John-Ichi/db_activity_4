@@ -47,33 +47,26 @@ if (isset($_POST['updateButton'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Record</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <style>
         body {
             text-align: center;
             font-family: "Arimo", serif;
             background-image: linear-gradient(to bottom right, #23cd6b, #272d2d);
-            
         }
         .container {
             background-color: #272d2d;
-            border-radius: 20px;
+            border-radius: 5px;
             margin-top: 15px;
             max-width: 400px;
             text-align: left;
             color: white;
-            justify-content: center;
-            align-items: center;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 20px;
-        }
-        .rows {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            border-radius: 20px;
         }
         .btn {
             color: gray;
@@ -91,49 +84,42 @@ if (isset($_POST['updateButton'])) {
             text-shadow: 2px 2px 4px #000000;
         }
     </style>
+
+    <title>Update Record</title>
 </head>
 
 <body>
-    <div class="container-sm">
-    <h1>UPDATE USER INFO</h1>
-    </div>
+    <h1> <b>UPDATE USER INFO</b></h1>
     <div class="container">
         <form action="" method="POST">
-            <label> Name: </label>
-            <input type="text" name="name" placeholder="Enter full name" autocomplete="off" value="<?php echo $original_name ?>" required>
+            <input type="text" name="name" placeholder="Enter full name" autocomplete="off" value="<?php echo $original_name ?>" required class="form-control-sm mt-3">
             <br>
-            <label> Email: </label>
-            <input type="text" name="email" placeholder="Enter your email" autocomplete="off" value="<?php echo $original_email ?>" required>
+            <input type="text" name="email" placeholder="Enter your email" autocomplete="off" value="<?php echo $original_email ?>" required class="form-control-sm">
             <br>
-            <label> Birthday: </label>
-            <input type="date" name="birthday" autocomplete="off" value="<?php echo $original_birthday ?>" required>
+            <label> Birthday: </label> <br>
+            <input type="date" name="birthday" autocomplete="off" value="<?php echo $original_birthday ?>" required class="form-control-sm">
             <br>
-            <label> Address: </label>
-            <input type="text" name="address" placeholder="Enter your address" autocomplete="off" value="<?php echo $original_address ?>" required>
+            <input type="text" name="address" placeholder="Enter your address" autocomplete="off" value="<?php echo $original_address ?>" required class="form-control-sm">
             <br>
-            <label> Gender: </label>
+            <label> Gender: </label> <br>
+            <input type="radio" name="gender" <?php echo ($original_gender =="Male") ? "checked" : "";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required class="form-check-input">Male
             <br>
-            <input type="radio" name="gender" <?php echo ($original_gender =="Male") ? "checked" : "";?> value = "Male" autocomplete="off" value="<?php echo $original_gender ?>" required>Male
+            <input type="radio" name="gender" <?php echo ($original_gender =="Female") ? "checked" : "";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required class="form-check-input">Female
             <br>
-            <input type="radio" name="gender" <?php echo ($original_gender =="Female") ? "checked" : "";?> value = "Female" autocomplete="off" value="<?php echo $original_gender ?>" required>Female
-            <br>
-            <input type="radio" name="gender" <?php echo ($original_gender =="Other") ? "checked" : "";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required>Other
+            <input type="radio" name="gender" <?php echo ($original_gender =="Other") ? "checked" : "";?> value = "Other" autocomplete="off" value="<?php echo $original_gender ?>" required class="form-check-input">Other
             <br>
             <div class="container text-center pb-3">
-            
-            <div class="row">
-            <div class="col">
-            <button type="submit" name="updateButton"> Update </button>
-            <br>
+                <div class="row">
+                    <div class="col">
+                    <button type="submit" name="updateButton" class="btn btn-sm btn-light">UPDATE</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-sm btn-light">
+                            <a href="webpage.php">CANCEL</a>
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            <div class="col">
-            <button class="btn btn-sm btn-light">
-                <a href="webpage.php"> Cancel</a>
-            </button>
-            </div>
-            </div>
-
         </form>
     </div>
 </body>
