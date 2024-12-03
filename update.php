@@ -69,11 +69,12 @@ if (isset($_POST['updateButton'])) {
             color: white;
         }
         .btn {
-            color: gray;
+            color: black;
+            font-weight: bold;
         }
         a {
             text-decoration: none;
-            color: gray;
+            color: black;
         }
         input {
             margin: 10px;

@@ -28,7 +28,7 @@ include 'connect.php';
             text-shadow: 2px 2px 4px #000000;
         }
         a {
-            color: gray;
+            color: #000000;
             text-decoration: none;
         }
         
@@ -85,8 +85,11 @@ if ($result) {
         <td>' . $address . '</td>
         <td>' . $gender . '</td>
         <td>
-            <button class="btn btn-sm btn-light">
-                <a href="update.php?updatebyid=' . $id . '">EDIT</a>
+            <button class="btn btn-sm btn-warning">
+                <a href="update.php?updatebyid=' . $id . '"><b>EDIT</b></a>
+            </button>
+            <button class="btn btn-sm btn-danger">
+                <a href="delete.php?deletebyid=' . $id . '"><b>DELETE</b></a>
             </button>
         </td>
         </tr>';
